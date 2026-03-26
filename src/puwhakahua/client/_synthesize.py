@@ -76,6 +76,9 @@ def synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = Non
             logger.error("Request failed with status code: %d" % r.status_code)
         return False
 
+    if play_audio and (output is None):
+        output = BytesIO()
+
     if isinstance(output, str):
         if logger is not None:
             logger.info("Writing WAV to: %s" % output)

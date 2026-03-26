@@ -138,12 +138,11 @@ if list_voices(output=buffer):
 Generate speech and play it:
 
 ```python
-from io import BytesIO
 from puwhakahua.client import synthesize
 
 voice = "..."
 text = "..."
-synthesize(voice, text, output=BytesIO(), play_audio=True)
+synthesize(voice, text, play_audio=True)
 ```
 
 Generate speech and save it to a file:
