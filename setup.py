@@ -10,7 +10,7 @@ setup(
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Multimedia :: Sound/Audio :: Speech',
     ],
-    #license="GPL-3.0-only",
+    #license="TBD",
     package_dir={
         '': 'src'
     },
@@ -19,8 +19,15 @@ setup(
         "setuptools",
         "wheel",
         "requests",
+        "pydub",
+        "wai_logging",
     ],
     version="0.0.1",
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
+    entry_points={
+        "console_scripts": [
+            "puwhakahua-client=puwhakahua.client:sys_main",
+        ],
+    },
 )
