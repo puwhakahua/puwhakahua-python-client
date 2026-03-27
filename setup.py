@@ -10,7 +10,7 @@ setup(
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Multimedia :: Sound/Audio :: Speech',
     ],
-    #license="TBD",
+    license='GNU General Public License version 3.0 (GPLv3)',
     package_dir={
         '': 'src'
     },
