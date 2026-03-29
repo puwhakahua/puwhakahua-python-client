@@ -2,7 +2,7 @@ from setuptools import setup, find_namespace_packages
 
 
 setup(
-    name="puwhakahua_python_client",
+    name="puwhakahua_client",
     description="Python client for the Pūwhakahua API.",
     url="https://github.com/puwhakahua/puwhakahua-python-client",
     classifiers=[
