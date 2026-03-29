@@ -1,4 +1,4 @@
-# puwhakahua-api-client
+# puwhakahua-python-client
 Python client for using the Pūwhakahua API.
 
 ## Installation
@@ -6,7 +6,7 @@ Python client for using the Pūwhakahua API.
 The latest code straight from the repository:
 
 ```bash
-pip install git+https://github.com/puwhakahua/puwhakahua-api-client.git
+pip install git+https://github.com/puwhakahua/puwhakahua-python-client.git
 ```
 
 ## Environment variables
