@@ -49,8 +49,9 @@ def synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = Non
 
     # build URL
     url = get_api_url(api_url=api_url, logger=logger)
-    if url.endswith("/"):
-        url = url[0:len(url)-1]
+    if not url.endswith("/"):
+        url += "/"
+    url += "synthesize"
     if logger is not None:
         logger.info("Synthesizing speech using: %s" % url)
 
@@ -70,7 +71,7 @@ def synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = Non
         data["noise_w_scale"] = noise_w_scale
 
     # perform request
-    r = requests.post(url, headers=headers, verify=not insecure, json=data)
+    r = requests.post(url, headers=headers, verify=not insecure, allow_redirects=True, json=data)
     if r.status_code != 200:
         if logger is not None:
             logger.error("Request failed with status code: %d" % r.status_code)
