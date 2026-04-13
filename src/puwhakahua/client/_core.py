@@ -11,7 +11,7 @@ ENV_PUWHAKAHUA_API_KEY = "PUWHAKAHUA_API_KEY"
 ENV_PUWHAKAHUA_API_URL = "PUWHAKAHUA_API_URL"
 """ environment variable for the API endpoint URL. """
 
-DEFAULT_API_URL = "https://api.pūwhakahua.nz"  # TODO TBD
+DEFAULT_API_URL = "https://api.puwhakahua.nz"
 """ the default URL for the api. """
 
 
