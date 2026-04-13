@@ -39,7 +39,7 @@ def list_voices(api_key: str = None, api_url: str = None, insecure: bool = False
         logger.info("Listing voices using: %s" % url)
 
     # perform request
-    r = requests.get(url, headers=headers, verify=not insecure)
+    r = requests.get(url, headers=headers, verify=not insecure, allow_redirects=True)
     if r.status_code != 200:
         if logger is not None:
             logger.error("Request failed with status code: %d" % r.status_code)
