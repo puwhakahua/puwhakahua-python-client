@@ -155,6 +155,9 @@ list_voices(api_key: str = None, api_url: str = None, insecure: bool = False, de
     :rtype: bool
 ```
 
+The above was generated using: `from puwhakahua.client import list_voices; help(list_voices)`
+
+
 ### Synthesize
 
 Generate speech and play it:
@@ -216,3 +219,5 @@ synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = None, l
     :return: True if successfully generated
     :rtype: bool
 ```
+
+The above was generated using: `from puwhakahua.client import synthesize; help(synthesize)`
