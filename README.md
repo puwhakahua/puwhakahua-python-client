@@ -133,7 +133,7 @@ if list_voices(output=buffer):
     print(d)
 ```
 
-Full help screen for `list_voices`:
+#### list_voices parameters
 
 ```python
 list_voices(api_key: str = None, api_url: str = None, insecure: bool = False, details: bool = False, output: Union[str, _io.StringIO] = None, logger: logging.Logger = None) -> bool
@@ -184,7 +184,7 @@ else:
     print("Something went wrong")
 ```
 
-Full help screen for `synthesize`:
+#### synthesize parameters
 
 ```python
 synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = None, length_scale: float = None, noise_scale: float = None, noise_w_scale: float = None, api_key: str = None, api_url: str = None, insecure: bool = False, output: Union[str, _io.BytesIO] = None, play_audio: bool = False, logger: logging.Logger = None)
