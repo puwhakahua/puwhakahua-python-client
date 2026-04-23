@@ -133,6 +133,28 @@ if list_voices(output=buffer):
     print(d)
 ```
 
+Full help screen for `list_voices`:
+
+```python
+list_voices(api_key: str = None, api_url: str = None, insecure: bool = False, details: bool = False, output: Union[str, _io.StringIO] = None, logger: logging.Logger = None) -> bool
+    Lists the available voices.
+
+    :param api_key: the API key to use (if necessary)
+    :type api_key: str or None
+    :param api_url: the API URL to use
+    :type api_url: str or None
+    :param insecure: whether to turn off the SSL certificate check, e.g., when using self-signed certs
+    :type insecure: bool
+    :param details: whether to output all the details or just the voices
+    :type details: bool
+    :param output: the file or StringIO to store the result in, uses stdout if None
+    :type output: str or StringIO or None
+    :param logger: the optional logger to use for outputting information
+    :type logger: logging.Logger
+    :return: True if successfully queried
+    :rtype: bool
+```
+
 ### Synthesize
 
 Generate speech and play it:
@@ -157,4 +179,40 @@ if synthesize(voice, text, output="./out.wav"):
     print("Generated WAV file")
 else:
     print("Something went wrong")
+```
+
+Full help screen for `synthesize`:
+
+```python
+synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = None, length_scale: float = None, noise_scale: float = None, noise_w_scale: float = None, api_key: str = None, api_url: str = None, insecure: bool = False, output: Union[str, _io.BytesIO] = None, play_audio: bool = False, logger: logging.Logger = None)
+    Synthesizes the speech.
+
+    :param voice: the ID of the voice model to use for synthesis
+    :type voice: str
+    :param text: the text to generate speech from
+    :type text: str
+    :param speaker: the name of the speaker to override the model's default with (when using multi-speaker models)
+    :type speaker: str or None
+    :param speaker_id: the ID of the speaker to override the model's default with (when using multi-speaker models)
+    :type speaker_id: int or None
+    :param length_scale: the phoneme length scale (< 1 is faster, > 1 is slower)
+    :type length_scale: float or None
+    :param noise_scale: the amount of generator noise to add
+    :type noise_scale: float or None
+    :param noise_w_scale: the amount of phoneme width noise to add
+    :type noise_w_scale: float or None
+    :param api_key: the API key to use (if necessary)
+    :type api_key: str or None
+    :param api_url: the API URL to use
+    :type api_url: str or None
+    :param insecure: whether to turn off the SSL certificate check, e.g., when using self-signed certs
+    :type insecure: bool
+    :param output: the file/BytesIO to write the generated WAV to
+    :type output: str or BytesIO
+    :param play_audio: whether to play the generated speech as well
+    :type play_audio: bool
+    :param logger: the optional logger to use for outputting information
+    :type logger: logging.Logger
+    :return: True if successfully generated
+    :rtype: bool
 ```
