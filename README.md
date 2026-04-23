@@ -158,7 +158,7 @@ list_voices(api_key: str = None, api_url: str = None, insecure: bool = False, de
 The above was generated using: `from puwhakahua.client import list_voices; help(list_voices)`
 
 
-### Synthesize
+### Synthesize speech
 
 Generate speech and play it:
 
