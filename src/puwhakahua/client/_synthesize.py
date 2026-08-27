@@ -1,5 +1,6 @@
 import logging
 import requests
+import time
 from io import BytesIO
 from typing import Union
 from pydub import AudioSegment
@@ -71,11 +72,15 @@ def synthesize(voice: str, text: str, speaker: str = None, speaker_id: int = Non
         data["noise_w_scale"] = noise_w_scale
 
     # perform request
+    start = time.time()
     r = requests.post(url, headers=headers, verify=not insecure, allow_redirects=True, json=data)
     if r.status_code != 200:
         if logger is not None:
             logger.error("Request failed with status code: %d" % r.status_code)
         return False
+    end = time.time()
+    if logger is not None:
+        logger.info("Response time: %.3fs" % (end - start))
 
     if play_audio and (output is None):
         output = BytesIO()

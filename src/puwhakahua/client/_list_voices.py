@@ -1,10 +1,12 @@
 import json
 import logging
-import requests
+import time
 from io import StringIO
 from typing import Union
 
-from ._core import load_api_key, get_api_url, assemble_headers
+import requests
+
+from ._core import get_api_url, assemble_headers
 
 
 def list_voices(api_key: str = None, api_url: str = None, insecure: bool = False, details: bool = False,
@@ -39,11 +41,15 @@ def list_voices(api_key: str = None, api_url: str = None, insecure: bool = False
         logger.info("Listing voices using: %s" % url)
 
     # perform request
+    start = time.time()
     r = requests.get(url, headers=headers, verify=not insecure, allow_redirects=True)
     if r.status_code != 200:
         if logger is not None:
             logger.error("Request failed with status code: %d" % r.status_code)
         return False
+    end = time.time()
+    if logger is not None:
+        logger.info("Response time: %.3fs" % (end - start))
 
     try:
         d = r.json()
